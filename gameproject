@@ -1,125 +1,160 @@
 ```
+puts "
+/***
+*    ██████╗  ██████╗  ██████╗ ████████╗██╗     ███████╗ ██████╗     ███████╗██╗   ██╗██████╗ ███████╗██████╗     ███╗   ███╗ █████╗ ██████╗ ██╗ ██████╗
+*    ██╔══██╗██╔═══██╗██╔═══██╗╚══██╔══╝██║     ██╔════╝██╔════╝     ██╔════╝██║   ██║██╔══██╗██╔════╝██╔══██╗    ████╗ ████║██╔══██╗██╔══██╗██║██╔═══██╗
+*    ██████╔╝██║   ██║██║   ██║   ██║   ██║     █████╗  ██║  ███╗    ███████╗██║   ██║██████╔╝█████╗  ██████╔╝    ██╔████╔██║███████║██████╔╝██║██║   ██║
+*    ██╔══██╗██║   ██║██║   ██║   ██║   ██║     ██╔══╝  ██║   ██║    ╚════██║██║   ██║██╔═══╝ ██╔══╝  ██╔══██╗    ██║╚██╔╝██║██╔══██║██╔══██╗██║██║   ██║
+*    ██████╔╝╚██████╔╝╚██████╔╝   ██║   ███████╗███████╗╚██████╔╝    ███████║╚██████╔╝██║     ███████╗██║  ██║    ██║ ╚═╝ ██║██║  ██║██║  ██║██║╚██████╔╝
+*    ╚═════╝  ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝╚══════╝ ╚═════╝     ╚══════╝ ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═╝    ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝ ╚═════╝
+*
+*/"
+puts "🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄"
 
-puts "/***
-*    ╔╗ ┌─┐┌─┐┌┬┐┬  ┌─┐┌─┐  ╔═╗┬ ┬┌─┐┌─┐┬─┐  ╔╦╗┌─┐┬─┐┬┌─┐  ╦  ┌─┐┌┐┌┌┬┐┬
-*    ╠╩╗│ ││ │ │ │  ├┤ │ ┬  ╚═╗│ │├─┘├┤ ├┬┘  ║║║├─┤├┬┘││ │  ║  ├─┤│││ │││
-*    ╚═╝└─┘└─┘ ┴ ┴─┘└─┘└─┘  ╚═╝└─┘┴  └─┘┴└─  ╩ ╩┴ ┴┴└─┴└─┘  ╩═╝┴ ┴┘└┘─┴┘o
-*/
-"
+@box_choice = []
+@koopa_choice = []
 
-def toads_house(box)
 
+
+def toads_house(box)#works
   puts "There are three boxes to choose from, choose carefully! Which box
-  will you choose: box 1, box 2, or box 3?"
+  will you choose: 📦 box 1, 📦 box 2, or 📦 box 3?"
   box = gets.chomp.downcase
+
   until box == "box 1" || box == "box 2" || box == "box 3"
-    puts "Incorrect input!"
+    puts "\n"
+    puts "🚫 Incorrect input! 🚫"
     print "Please choose box 1, box 2, or box 3:"
     box = gets.chomp.downcase
   end
+
+
   case box
   when "box 1"
     system('clear')
-    puts "Are you sure #{box} is the box you want to pick? Yes/No"
+    puts "Are you sure 📦 #{box} is the box you want to pick? Yes/No"
     sure = gets.chomp.downcase
     system('clear')
     until sure == "yes" || sure == "no"
-      puts "Incorrect input!"
+      puts "\n"
+      puts "🚫 Incorrect input! 🚫"
       print "Please choose yes or no:"
       sure = gets.chomp.downcase
     end
+
     if sure == "yes"
-      puts "You got a Frog Suit! Ribbit!"
+      @box_choice << "box 1"
+      puts "You got a 🔨🔨🔨🔨🔨🔨🔨 Hammer Suit!"
       puts "\n"
     else
       system('clear')
-      toads_house(box)
+      toads_house
     end
+
   when "box 2"
     system('clear')
-    puts "Are you sure #{box} is the box you want to pick? Yes/No"
+    puts "Are you sure 📦 #{box} is the box you want to pick? Yes/No"
     sure = gets.chomp.downcase
     system('clear')
+
     until sure == "yes" || sure == "no"
-      puts "Incorrect input!"
+      puts "\n"
+      puts "🚫 Incorrect input! 🚫"
       print "Please choose yes or no:"
       sure = gets.chomp.downcase
       system('clear')
     end
+
     if sure == "yes"
-      puts "You got a Fire Flower!"
+      @box_choice << "box 2"
+      puts "You got a 🔥 🌻 Fire Flower! 🔥 🌻"
       puts "\n"
     else
       system('clear')
       toads_house(box)
     end
+
   when "box 3"
     system('clear')
-    puts "Are you sure #{box} is the box you want to pick? Yes/No"
+    puts "Are you sure 📦 #{box} is the box you want to pick? Yes/No"
     sure = gets.chomp.downcase
     system('clear')
+
     until sure == "yes" || sure == "no"
-      puts "Incorrect input!"
+      puts "\n"
+      puts "🚫 Incorrect input! 🚫"
       print "Please choose yes or no:"
       sure = gets.chomp.downcase
     end
+
     if sure == "yes"
-      puts "You got a Super Leaf!"
+      @box_choice << "box 3"
+      puts "You got a 🍂🍂🍂🍂🍂🍂🍂🍂 Super Leaf!"
       puts "\n"
     else
       system('clear')
       toads_house(box)
     end
   end
+  return box
 end
 
 box = ""
-puts "Welcome to Super Mario 3 Mushroom House!"
+puts "Welcome to Super Mario 3 Toad's Mushroom House!"
 puts "\n"
-puts "Toad: \"Pick a box. Its contents will help you on your way.\""
+puts "Toad: \"Pick a box. 📦 Its contents will help you on your way.\""
 puts "\n"
 
 toads_house(box)
 
-bon_voyage = "Toad: \"You are ready to continue your adventure! Go get Koopa!
-Good luck rescuing Princess Peach!\""
+bon_voyage = "Toad: \"You are ready to continue your adventure! Go get 🐢 👹 Koopa!
+Good luck rescuing Princess Peach! 👸🏼 🍑\""
+
 puts bon_voyage
 
 # End of part 1
 
-def abort(quitting)
+def quit(quitting)#works
   unless quitting == "yes" || quitting == "no"
-    puts "Incorrect input!"
+    puts "\n"
+    puts "🚫Incorrect input!🚫"
     print "Please choose yes or no:"
     quitting = gets.chomp.downcase
   end
+
   if quitting == "yes"
     system('clear')
     puts "You have quit and are now free to go."
     exit
   else
-    board_one
+    board_one(quitting)
   end
+  return quitting
 end
 
+quitting = ""
 
-def board_one
+
+def board_one(quitting)#works
   play = ""
-  puts "Are you ready to conquer Koopa and rescue Princess Peach?"
+  puts "\n"
+  puts "Are you ready to conquer 🐢 👹 Koopa and rescue 👸🏼 🍑 Princess Peach?"
   print "Yes or No:"
   play = gets.chomp.downcase
 
   until play == "yes" || play == "no"
-    puts "Incorrect input!"
+    puts "\n"
+    puts "🚫 Incorrect input! 🚫"
     print "Please choose yes or no:"
     play = gets.chomp.downcase
   end
 
   case play
   when "no"
+    system('clear')
     puts "So then would you like to quit? Yes/No"
     quitting = gets.chomp.downcase
-    abort(quitting)
+    quit(quitting)
   when "yes"
     system('clear')
     puts "Have no fear! Mario is here!"
@@ -128,29 +163,258 @@ def board_one
   end
 end
 
-board_one
+board_one(quitting)
 
-def lava
+def lava(box)#works
   lava = ""
-  puts "It's time to rescue Peach!"
+  puts "It's time to rescue 👸🏼 🍑 Peach!"
   puts "\n"
-  puts "Uh oh, lava everywhere! Do you jump over or jump in?"
+  puts "Uh oh, 🌋 🔥 lava everywhere! Do you jump over or jump in?"
+  puts "🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥"
+  print "Enter JUMP OVER or JUMP IN:"
   jump = gets.chomp.downcase
   until jump == "jump in" || jump == "jump over"
-    puts "Incorrect input!"
+    puts "\n"
+    puts "🚫 Incorrect input! 🚫"
     print "Please choose JUMP IN or JUMP OVER:"
-    sure = gets.chomp.downcase
+    jump = gets.chomp.downcase
   end
   if jump == "jump over"
-    puts "Phew! That was close but you made it over!"
+    system('clear')
+    puts "😅 Phew! That was close but you made it over!"
+    puts "\n"
   elsif jump == "jump in"
-    puts "You died! Game Over."
-    toads_house(box)  # get help from TA
+    system('clear')
+    puts "😵 You died! 👎"
+    puts "\n"
+    puts "/***
+    *     ██████╗  █████╗ ███╗   ███╗███████╗     ██████╗ ██╗   ██╗███████╗██████╗
+    *    ██╔════╝ ██╔══██╗████╗ ████║██╔════╝    ██╔═══██╗██║   ██║██╔════╝██╔══██╗
+    *    ██║  ███╗███████║██╔████╔██║█████╗      ██║   ██║██║   ██║█████╗  ██████╔╝
+    *    ██║   ██║██╔══██║██║╚██╔╝██║██╔══╝      ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗
+    *    ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗    ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║
+    *     ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝     ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝
+    *
+    */"
+    toads_house(box)
   end
 end
 # make a loop outside of methods to restart game when dead
+lava(box)
 
-lava
+def turtle(koopa_troopa)#works
+  puts "Uh oh, there's a 🐢  Koopa Troopa!"
+  puts "\n"
+  puts "Do you:"
+  puts "A) jump on him and keep it moving?"
+  puts "B) jump on him and take his shell with you?"
+  puts "C) jump over him and keep it moving?"
+  puts "\n"
+  print "Choose A, B, or C:"
+  koopa_troopa = gets.chomp.downcase
 
+  until koopa_troopa == "a" || koopa_troopa == "b" || koopa_troopa == "c"
+    puts "\n"
+    puts "🚫 Incorrect input! 🚫"
+    print "Please choose 'A', 'B', or 'C':"
+    koopa_troopa = gets.chomp.downcase
+  end
+
+
+  case koopa_troopa
+  when "a"
+    @koopa_choice << "a"
+    system('clear')
+    puts "👏 Nice job, Mario! You clobbered that little sucker!"
+    puts "\n"
+  when "b"
+    @koopa_choice << "b"
+    system('clear')
+    puts "👏 Nice job, Mario! You clobbered that little sucker and kept his shell as a potential weapon!"
+    puts "\n"
+  when "c"
+    @koopa_choice << "c"
+    system('clear')
+    puts "😅 Phew! That was a close one, Mario!"
+    puts "\n"
+  end
+end
+
+koopa_troopa = ""
+turtle(koopa_troopa)
+
+def fight_flight(decision, quitting, box, koopa_troopa)#works
+
+  puts "BUM! BUM! BUM! 😱"
+  puts "\n"
+  puts "Here is Bowser, King of the Koopas and he looks ANGRY! 🐢 👹"
+  puts "You are going to have to defeat him in order to save Princess Peach!👸🏼 🍑"
+  puts "\n"
+  puts "What are you going to do, Mario?"
+  puts "\n"
+  puts "Will you:"
+  puts "A) 👊 Fight him?"
+  puts "B) 👶 Be a coward and quit?"
+  puts "\n"
+  print "Choose A or B:"
+  decision = gets.chomp.downcase
+
+  until decision == "a" || decision == "b"
+    puts "\n"
+    puts "🚫 Incorrect input! 🚫"
+    print "Please choose 'A', 'B':"
+    decision = gets.chomp.downcase
+  end
+
+  if decision == "a"
+    system('clear')
+    puts "👊 Hell yeah! Beat that ass, Mario!"
+    puts "\n"
+  elsif decision == "b"
+    system('clear')
+    puts "So then would you like to quit? Yes/No"
+    quitting = gets.chomp.downcase
+    quit(quitting)
+    board_one(quitting)
+    lava(box)
+    turtle(koopa_troopa)
+    fight_flight(box, koopa_troopa, quitting)
+  end
+  return decision
+end
+decision = ""
+fight_flight(decision, quitting, box, koopa_troopa)
+
+def fight_choice
+  options = {
+    "box 1" => {
+      "a" => [
+        "A) Jump on him?",
+        "B) Use your Hammer Suit and throw a 🔨 at him?",
+        "C) Take a moment and think about it?"
+      ],
+      "b" => [
+        "A) Jump on him?",
+        "B) Use your Hammer Suit and throw a 🔨 at him?",
+        "C) Take a moment and think about it?",
+        "D) Throw the Koopa Troopa shell at him"
+      ],
+      "c" => [
+        "A) Jump on him?",
+        "B) Use your Hammer Suit and throw a 🔨 at him?",
+        "C) Take a moment and think about it?"
+      ]
+    },
+    "box 2" => {
+      "a" => [
+        "A) Jump on him?",
+        "B) Use your 🔥 🌻 Fire Flower and throw a 🔥 🔴 Fireball at him?",
+        "C) Take a moment and think about it?"
+      ],
+      "b" => [
+        "A) Jump on him?",
+        "B) Use your 🔥 🌻 Fire Flower and throw a 🔥 🔴 Fireball at him?",
+        "C) Take a moment and think about it?",
+        "D) Throw the Koopa Troopa shell at him"
+      ],
+      "c" => [
+        "A) Jump on him?",
+        "B) Use your 🔥 🌻 Fire Flower and throw a 🔥 🔴 Fireball at him?",
+        "C) Take a moment and think about it?"
+      ]
+    },
+    "box 3" => {
+      "a" => [
+        "A) Jump on him?",
+        "B) Use your 🍂🍂🍂🍂🍂🍂 Super Leaf and whack him with your Racoon Tail?",
+        "C) Take a moment and think about it?"
+      ],
+      "b" => [
+        "A) Jump on him?",
+        "B) Use your 🍂🍂🍂🍂🍂🍂 Super Leaf and whack him with your Racoon Tail?",
+        "C) Take a moment and think about it?",
+        "D) Throw the Koopa Troopa shell at him"
+      ],
+      "c" => [
+        "A) Jump on him?",
+        "B) Use your 🍂🍂🍂🍂🍂🍂 Super Leaf and whack him with your Racoon Tail?",
+        "C) Take a moment and think about it?"
+      ]
+    }
+  }
+  puts "Koopa is fuming! It looks like he's about to make a move!"
+  puts "Think fast, Mario!"
+  puts "What will you do?"
+  puts "Will you:"
+  puts options[@box_choice.first][@koopa_choice.first]
+  users_choice = gets.chomp.downcase
+
+  until users_choice == "a" || users_choice == "b" || users_choice == "c" || users_choice == "d"
+    puts "\n"
+    puts "🚫Incorrect input!🚫"
+    print "Please choose 'A', 'B', or 'C':"
+    users_choice = gets.chomp.downcase
+  end
+
+  case users_choice
+  when "a"
+    puts "😱Oh, no! You should have thrown the Koopa Troopa shell!"
+    puts "Mid jump, the Koopa Troopa re-emerged from it's shell and shrunk you out of your power up!"
+    puts "Bowser uses the oportunity to jump on and destroy you!"
+    puts "/***
+    *     ██████╗  █████╗ ███╗   ███╗███████╗     ██████╗ ██╗   ██╗███████╗██████╗
+    *    ██╔════╝ ██╔══██╗████╗ ████║██╔════╝    ██╔═══██╗██║   ██║██╔════╝██╔══██╗
+    *    ██║  ███╗███████║██╔████╔██║█████╗      ██║   ██║██║   ██║█████╗  ██████╔╝
+    *    ██║   ██║██╔══██║██║╚██╔╝██║██╔══╝      ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗
+    *    ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗    ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║
+    *     ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝     ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝
+    *
+    */"
+
+  when "b"
+    puts "😱Oh, no! You should have thrown the Koopa Troopa shell!"
+    puts "The Koopa Troopa re-emerged from it's shell and shrunk you out of your power up!"
+    puts "Bowser uses the oportunity to jump on and destroy you!"
+    puts "/***
+    *     ██████╗  █████╗ ███╗   ███╗███████╗     ██████╗ ██╗   ██╗███████╗██████╗
+    *    ██╔════╝ ██╔══██╗████╗ ████║██╔════╝    ██╔═══██╗██║   ██║██╔════╝██╔══██╗
+    *    ██║  ███╗███████║██╔████╔██║█████╗      ██║   ██║██║   ██║█████╗  ██████╔╝
+    *    ██║   ██║██╔══██║██║╚██╔╝██║██╔══╝      ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗
+    *    ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗    ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║
+    *     ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝     ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝
+    *
+    */"
+
+  when "c"
+    puts "👎Bad move!"
+    puts "Bowser jumped on you and clobbered you!"
+    puts "/***
+    *     ██████╗  █████╗ ███╗   ███╗███████╗     ██████╗ ██╗   ██╗███████╗██████╗
+    *    ██╔════╝ ██╔══██╗████╗ ████║██╔════╝    ██╔═══██╗██║   ██║██╔════╝██╔══██╗
+    *    ██║  ███╗███████║██╔████╔██║█████╗      ██║   ██║██║   ██║█████╗  ██████╔╝
+    *    ██║   ██║██╔══██║██║╚██╔╝██║██╔══╝      ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗
+    *    ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗    ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║
+    *     ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝     ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝
+    *
+    */"
+
+  when "d"
+    puts "Nice! Direct hit!"
+    puts "You've defeated Bowser and have rescued 👸🏼 🍑 Princess Peach!"
+    puts "\n"
+    puts "👸🏼 Princess Peach: \"Thank you! Thank you! You saved me!\""
+    puts "/***
+    *    ██╗   ██╗ ██████╗ ██╗   ██╗    ██╗    ██╗██╗███╗   ██╗██╗
+    *    ╚██╗ ██╔╝██╔═══██╗██║   ██║    ██║    ██║██║████╗  ██║██║
+    *     ╚████╔╝ ██║   ██║██║   ██║    ██║ █╗ ██║██║██╔██╗ ██║██║
+    *      ╚██╔╝  ██║   ██║██║   ██║    ██║███╗██║██║██║╚██╗██║╚═╝
+    *       ██║   ╚██████╔╝╚██████╔╝    ╚███╔███╔╝██║██║ ╚████║██╗
+    *       ╚═╝    ╚═════╝  ╚═════╝      ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝╚═╝
+    *
+    */"
+  end
+end
+
+fight_choice
 
 ```
