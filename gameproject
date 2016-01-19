@@ -1,4 +1,5 @@
 ```
+
 puts "
 /***
 *    ██████╗  ██████╗  ██████╗ ████████╗██╗     ███████╗ ██████╗     ███████╗██╗   ██╗██████╗ ███████╗██████╗     ███╗   ███╗ █████╗ ██████╗ ██╗ ██████╗
@@ -165,7 +166,7 @@ end
 
 board_one(quitting)
 
-def lava(box)#works
+def lava(box, quitting)#works
   lava = ""
   puts "It's time to rescue 👸🏼 🍑 Peach!"
   puts "\n"
@@ -196,11 +197,14 @@ def lava(box)#works
     *     ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝     ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝
     *
     */"
+    `afplay dead.mp3`
     toads_house(box)
+    board_one(quitting)
+    lava(box, quitting)
   end
 end
 # make a loop outside of methods to restart game when dead
-lava(box)
+lava(box, quitting)
 
 def turtle(koopa_troopa)#works
   puts "Uh oh, there's a 🐢  Koopa Troopa!"
@@ -342,8 +346,10 @@ def fight_choice
     }
   }
   puts "Koopa is fuming! It looks like he's about to make a move!"
+  puts "\n"
   puts "Think fast, Mario!"
   puts "What will you do?"
+  puts "\n"
   puts "Will you:"
   puts options[@box_choice.first][@koopa_choice.first]
   users_choice = gets.chomp.downcase
@@ -370,6 +376,7 @@ def fight_choice
       *     ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝     ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝
       *
       */"
+      `afplay gameover.mp3`
     else
       puts "Nice! Direct hit!"
       puts "You've defeated Bowser and have rescued 👸🏼 🍑 Princess Peach!"
@@ -384,6 +391,7 @@ def fight_choice
       *       ╚═╝    ╚═════╝  ╚═════╝      ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝╚═╝
       *
       */"
+      `afplay grassland1.mp3`
     end
 
   when "b"
@@ -400,6 +408,7 @@ def fight_choice
       *     ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝     ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝
       *
       */"
+      `afplay gameover.mp3`
     else
       puts "Nice! Direct hit!"
       puts "You've defeated Bowser and have rescued 👸🏼 🍑 Princess Peach!"
@@ -414,6 +423,7 @@ def fight_choice
       *       ╚═╝    ╚═════╝  ╚═════╝      ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝╚═╝
       *
       */"
+      `afplay grassland1.mp3`
     end
 
   when "c"
@@ -428,6 +438,7 @@ def fight_choice
     *     ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝     ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝
     *
     */"
+    `afplay gameover.mp3`
 
   when "d"
 
@@ -444,6 +455,7 @@ def fight_choice
     *       ╚═╝    ╚═════╝  ╚═════╝      ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝╚═╝
     *
     */"
+    `afplay grassland1.mp3`
   end
 end
 
