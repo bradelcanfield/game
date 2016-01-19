@@ -48,7 +48,7 @@ def toads_house(box)#works
       puts "\n"
     else
       system('clear')
-      toads_house
+      toads_house(box)
     end
 
   when "box 2"
@@ -274,11 +274,10 @@ def fight_flight(decision, quitting, box, koopa_troopa)#works
     system('clear')
     puts "So then would you like to quit? Yes/No"
     quitting = gets.chomp.downcase
-    quit(quitting)
     board_one(quitting)
     lava(box)
     turtle(koopa_troopa)
-    fight_flight(box, koopa_troopa, quitting)
+    fight_flight(decision, quitting, box, koopa_troopa)
   end
   return decision
 end
@@ -449,3 +448,4 @@ def fight_choice
 end
 
 fight_choice
+```
