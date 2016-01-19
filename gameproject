@@ -18,7 +18,7 @@ puts "🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄
 
 
 # choosing the power up
-def toads_house(box)#works
+def toads_house(box)
   puts "There are three boxes to choose from, choose carefully! Which box
   will you choose: 📦 'box 1', 📦 'box 2', or 📦 'box 3'?"
   box = gets.chomp.downcase
@@ -130,7 +130,7 @@ puts bon_voyage
 
 # End of part 1
 # creates a method for quitting game
-def quit(quitting)#works
+def quit(quitting)
   # loops until correct input
   until quitting == "yes" || quitting == "no"
     puts "\n"
@@ -153,7 +153,7 @@ end
 quitting = ""
 
 
-def board_one(quitting)#works
+def board_one(quitting)
   play = ""
   puts "\n"
   puts "Are you ready to conquer 🐢 👹 Koopa and rescue 👸🏼 🍑 Princess Peach?"
@@ -186,7 +186,7 @@ end
 
 board_one(quitting)
 
-def lava(box, quitting)#works
+def lava(box, quitting)
   lava = ""
   puts "It's time to rescue 👸🏼 🍑 Peach!"
   puts "\n"
@@ -232,7 +232,7 @@ end
 # make a loop outside of methods to restart game when dead
 lava(box, quitting)
 # users next choice
-def turtle(koopa_troopa)#works
+def turtle(koopa_troopa)
   puts "Uh oh, there's a 🐢  Koopa Troopa!"
   puts "\n"
   puts "Do you:"
@@ -287,7 +287,7 @@ end
 koopa_troopa = ""
 turtle(koopa_troopa)
 
-def fight_flight(decision, quitting, box, koopa_troopa)#works
+def fight_flight(decision, quitting, box, koopa_troopa)
   puts "BUM! BUM! BUM! 😱"
   puts "\n"
   puts "Here is Bowser, King of the Koopas and he looks ANGRY! 🐢 👹"
