@@ -1,5 +1,6 @@
 ```
 
+
 puts "
 /***
 *    ██████╗  ██████╗  ██████╗ ████████╗██╗     ███████╗ ██████╗     ███████╗██╗   ██╗██████╗ ███████╗██████╗     ███╗   ███╗ █████╗ ██████╗ ██╗ ██████╗
@@ -11,6 +12,8 @@ puts "
 *
 */"
 puts "🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄 🍄"
+`afplay intro.mp3`
+`afplay herewego.wav`
 
 @box_choice = []
 @koopa_choice = []
@@ -24,6 +27,7 @@ def toads_house(box)#works
 
   until box == "box 1" || box == "box 2" || box == "box 3"
     puts "\n"
+    `afplay bump.wav`
     puts "🚫 Incorrect input! 🚫"
     print "Please choose 'box 1', 'box 2', or 'box 3':"
     box = gets.chomp.downcase
@@ -38,6 +42,7 @@ def toads_house(box)#works
     system('clear')
     until sure == "yes" || sure == "no"
       puts "\n"
+      `afplay bump.wav`
       puts "🚫 Incorrect input! 🚫"
       print "Please choose 'yes' or 'no':"
       sure = gets.chomp.downcase
@@ -47,6 +52,8 @@ def toads_house(box)#works
       @box_choice << "box 1"
       puts "You got a 🔨🔨🔨🔨🔨🔨🔨 Hammer Suit!"
       puts "\n"
+      `afplay powerup.mp3`
+      `afplay letsgo.wav`
     else
       system('clear')
       toads_house(box)
@@ -60,6 +67,7 @@ def toads_house(box)#works
 
     until sure == "yes" || sure == "no"
       puts "\n"
+      `afplay bump.wav`
       puts "🚫 Incorrect input! 🚫"
       print "Please choose 'yes' or 'no':"
       sure = gets.chomp.downcase
@@ -70,6 +78,8 @@ def toads_house(box)#works
       @box_choice << "box 2"
       puts "You got a 🔥 🌻 Fire Flower! 🔥 🌻"
       puts "\n"
+      `afplay powerup.mp3`
+      `afplay letsgo.wav`
     else
       system('clear')
       toads_house(box)
@@ -83,6 +93,7 @@ def toads_house(box)#works
 
     until sure == "yes" || sure == "no"
       puts "\n"
+      `afplay bump.wav`
       puts "🚫 Incorrect input! 🚫"
       print "Please choose 'yes' or 'no':"
       sure = gets.chomp.downcase
@@ -92,6 +103,8 @@ def toads_house(box)#works
       @box_choice << "box 3"
       puts "You got a 🍂🍂🍂🍂🍂🍂🍂🍂 Super Leaf!"
       puts "\n"
+      `afplay powerup.mp3`
+      `afplay letsgo.wav`
     else
       system('clear')
       toads_house(box)
@@ -118,6 +131,7 @@ puts bon_voyage
 def quit(quitting)#works
   unless quitting == "yes" || quitting == "no"
     puts "\n"
+    `afplay bump.wav`
     puts "🚫Incorrect input!🚫"
     print "Please choose yes or no:"
     quitting = gets.chomp.downcase
@@ -145,6 +159,7 @@ def board_one(quitting)#works
 
   until play == "yes" || play == "no"
     puts "\n"
+    `afplay bump.wav`
     puts "🚫 Incorrect input! 🚫"
     print "Please choose yes or no:"
     play = gets.chomp.downcase
@@ -160,7 +175,9 @@ def board_one(quitting)#works
     system('clear')
     puts "Have no fear! Mario is here!"
     puts "\n"
-    puts "Let's use that power up!"
+    `afplay letsgo.wav`
+    puts "💢💢  Let's use that power up!  💢 💢"
+    `afplay powerup.mp3`
   end
 end
 
@@ -176,6 +193,7 @@ def lava(box, quitting)#works
   jump = gets.chomp.downcase
   until jump == "jump in" || jump == "jump over"
     puts "\n"
+    `afplay bump.wav`
     puts "🚫 Incorrect input! 🚫"
     print "Please choose 'jump over' or 'jump in':"
     jump = gets.chomp.downcase
@@ -184,6 +202,8 @@ def lava(box, quitting)#works
     system('clear')
     puts "😅 Phew! That was close but you made it over!"
     puts "\n"
+    `afplay bestcoin.wav`
+    `afplay letsgo.wav`
   elsif jump == "jump in"
     system('clear')
     puts "😵 You died! 👎"
@@ -214,16 +234,18 @@ def turtle(koopa_troopa)#works
   puts "B) jump on him and take his shell with you?"
   puts "C) jump over him and keep it moving?"
   puts "\n"
+  `afplay koopa.mp3`
   print "Choose 'A', 'B', or 'C':"
+
   koopa_troopa = gets.chomp.downcase
 
   until koopa_troopa == "a" || koopa_troopa == "b" || koopa_troopa == "c"
     puts "\n"
+    `afplay bump.wav`
     puts "🚫 Incorrect input! 🚫"
     print "Please choose 'A', 'B', or 'C':"
     koopa_troopa = gets.chomp.downcase
   end
-
 
   case koopa_troopa
   when "a"
@@ -231,16 +253,25 @@ def turtle(koopa_troopa)#works
     system('clear')
     puts "👏 Nice job, Mario! You clobbered that little sucker!"
     puts "\n"
+    `afplay bestcoin.wav`
+    `afplay letsgo.wav`
+
   when "b"
     @koopa_choice << "b"
     system('clear')
     puts "👏 Nice job, Mario! You clobbered that little sucker and kept his shell as a potential weapon!"
     puts "\n"
+    `afplay bestcoin.wav`
+    `afplay letsgo.wav`
+
   when "c"
     @koopa_choice << "c"
     system('clear')
     puts "😅 Phew! That was a close one, Mario!"
     puts "\n"
+    `afplay bestcoin.wav`
+    `afplay letsgo.wav`
+
   end
 end
 
@@ -260,11 +291,13 @@ def fight_flight(decision, quitting, box, koopa_troopa)#works
   puts "A) 👊 Fight him?"
   puts "B) 👶 Be a coward and quit?"
   puts "\n"
+  `afplay koopa.mp3`
   print "Choose A or B:"
   decision = gets.chomp.downcase
 
   until decision == "a" || decision == "b"
     puts "\n"
+    `afplay bump.wav`
     puts "🚫 Incorrect input! 🚫"
     print "Please choose 'A', 'B':"
     decision = gets.chomp.downcase
@@ -274,6 +307,9 @@ def fight_flight(decision, quitting, box, koopa_troopa)#works
     system('clear')
     puts "👊 Hell yeah! Beat that ass, Mario!"
     puts "\n"
+    `afplay bestcoin.wav`
+    `afplay letsgo.wav`
+
   elsif decision == "b"
     system('clear')
     puts "So then would you like to quit? Yes/No"
@@ -356,6 +392,7 @@ def fight_choice
 
   until users_choice == "a" || users_choice == "b" || users_choice == "c" || users_choice == "d"
     puts "\n"
+    `afplay bump.wav`
     puts "🚫Incorrect input!🚫"
     print "Please choose #{options[box_.first][@koopa_choice.first]}"
     users_choice = gets.chomp.downcase
