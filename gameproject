@@ -23,7 +23,7 @@ def toads_house(box)#works
   will you choose: 📦 'box 1', 📦 'box 2', or 📦 'box 3'?"
   box = gets.chomp.downcase
 
-  until box == "box 1" || box == "box 2" || box == "box 3"
+  until box == "box 1" || box == "box 2" || box == "box 3" || "box1" || box == "box2" || box == "box3" ||"1" || box == "2" || box == "3"
     puts "\n"
     `afplay bump.wav`
     puts "🚫 Incorrect input! 🚫"
