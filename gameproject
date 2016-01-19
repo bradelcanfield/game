@@ -358,8 +358,8 @@ def fight_choice
 
   case users_choice
   when "a"
-    if @koopa_choice == "b"
-      puts "😱Oh, no! You should have thrown the Koopa Troopa shell!"
+    if @koopa_choice.first == "b"
+      puts "😱  Oh, no! You should have thrown the Koopa Troopa shell!"
       puts "Mid jump, the Koopa Troopa re-emerged from it's shell and shrunk you out of your power up!"
       puts "Bowser uses the oportunity to jump on and destroy you!"
       puts "/***
@@ -388,8 +388,8 @@ def fight_choice
     end
 
   when "b"
-    if @koopa_choice == "b"
-      puts "😱Oh, no! You should have thrown the Koopa Troopa shell!"
+    if @koopa_choice.first == "b"
+      puts "😱  Oh, no! You should have thrown the Koopa Troopa shell!"
       puts "The Koopa Troopa re-emerged from it's shell and shrunk you out of your power up!"
       puts "Bowser uses the oportunity to jump on and destroy you!"
       puts "/***
@@ -418,7 +418,7 @@ def fight_choice
     end
 
   when "c"
-    puts "👎Bad move!"
+    puts "👎  Bad move!"
     puts "You hesitated so Bowser jumped on you and clobbered you!"
     puts "/***
     *     ██████╗  █████╗ ███╗   ███╗███████╗     ██████╗ ██╗   ██╗███████╗██████╗
@@ -449,4 +449,3 @@ def fight_choice
 end
 
 fight_choice
-```
