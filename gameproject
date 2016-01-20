@@ -43,7 +43,7 @@ def toads_house(box)
       puts "\n"
       `afplay bump.wav`
       puts "🚫 Incorrect input! 🚫"
-      print "Please choose 'yes' or 'no':"
+      print "Please choose 'yes' or 'no':\t"
       sure = gets.chomp.downcase
     end
 
@@ -69,7 +69,7 @@ def toads_house(box)
       puts "\n"
       `afplay bump.wav`
       puts "🚫 Incorrect input! 🚫"
-      print "Please choose 'yes' or 'no':"
+      print "Please choose 'yes' or 'no':\t"
       sure = gets.chomp.downcase
       system('clear')
     end
@@ -96,7 +96,7 @@ def toads_house(box)
       puts "\n"
       `afplay bump.wav`
       puts "🚫 Incorrect input! 🚫"
-      print "Please choose 'yes' or 'no':"
+      print "Please choose 'yes' or 'no':\t"
       sure = gets.chomp.downcase
     end
 
@@ -128,7 +128,7 @@ Good luck rescuing Princess Peach! 👸🏼 🍑\""
 
 puts bon_voyage
 
-# End of part 1
+
 # creates a method for quitting game
 def quit(quitting)
   # loops until correct input
@@ -136,7 +136,7 @@ def quit(quitting)
     puts "\n"
     `afplay bump.wav`
     puts "🚫Incorrect input!🚫"
-    print "Please choose yes or no:"
+    print "Please choose yes or no:\t"
     quitting = gets.chomp.downcase
   end
 
@@ -157,14 +157,14 @@ def board_one(quitting)
   play = ""
   puts "\n"
   puts "Are you ready to conquer 🐢 👹 Koopa and rescue 👸🏼 🍑 Princess Peach?"
-  print "Yes or No:"
+  print "Yes or No:\t"
   play = gets.chomp.downcase
 # loops until correct input
   until play == "yes" || play == "no"
     puts "\n"
     `afplay bump.wav`
     puts "🚫 Incorrect input! 🚫"
-    print "Please choose yes or no:"
+    print "Please choose yes or no:\t"
     play = gets.chomp.downcase
   end
 
@@ -192,14 +192,14 @@ def lava(box, quitting)
   puts "\n"
   puts "Uh oh, 🌋 🔥 lava everywhere! Do you 'jump over' or 'jump in'?"
   puts "🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥 🔥"
-  print "Enter 'jump over' or 'jump in':"
+  print "Enter 'jump over' or 'jump in':\t"
   jump = gets.chomp.downcase
   # loops until correct input
   until jump == "jump in" || jump == "jump over"
     puts "\n"
     `afplay bump.wav`
     puts "🚫 Incorrect input! 🚫"
-    print "Please choose 'jump over' or 'jump in':"
+    print "Please choose 'jump over' or 'jump in':\t"
     jump = gets.chomp.downcase
   end
 
@@ -241,7 +241,7 @@ def turtle(koopa_troopa)
   puts "C) jump over him and keep it moving?"
   puts "\n"
   `afplay koopa.mp3`
-  print "Choose 'A', 'B', or 'C':"
+  print "Choose 'A', 'B', or 'C':\t"
 
   koopa_troopa = gets.chomp.downcase
 # loops until correct input
@@ -249,7 +249,7 @@ def turtle(koopa_troopa)
     puts "\n"
     `afplay bump.wav`
     puts "🚫 Incorrect input! 🚫"
-    print "Please choose 'A', 'B', or 'C':"
+    print "Please choose 'A', 'B', or 'C':\t"
     koopa_troopa = gets.chomp.downcase
   end
 
@@ -287,7 +287,7 @@ end
 koopa_troopa = ""
 turtle(koopa_troopa)
 
-def fight_flight(decision, quitting, box, koopa_troopa)
+def fight_flight(decision, quitting)
   puts "BUM! BUM! BUM! 😱"
   puts "\n"
   puts "Here is Bowser, King of the Koopas and he looks ANGRY! 🐢 👹"
@@ -300,14 +300,14 @@ def fight_flight(decision, quitting, box, koopa_troopa)
   puts "B) 👶 Be a coward and quit?"
   puts "\n"
   `afplay koopa.mp3`
-  print "Choose A or B:"
+  print "Choose A or B:\t"
   decision = gets.chomp.downcase
 # loops until correct input
   until decision == "a" || decision == "b"
     puts "\n"
     `afplay bump.wav`
     puts "🚫 Incorrect input! 🚫"
-    print "Please choose 'A', 'B':"
+    print "Please choose 'A', 'B':\t"
     decision = gets.chomp.downcase
   end
 
@@ -320,17 +320,15 @@ def fight_flight(decision, quitting, box, koopa_troopa)
 # option to quit
   elsif decision == "b"
     system('clear')
-    puts "So then would you like to quit? Yes/No"
+    print "So then would you like to quit? Yes/No:\t"
     quitting = gets.chomp.downcase
-    board_one(quitting)
-    lava(box)
-    turtle(koopa_troopa)
-    fight_flight(decision, quitting, box, koopa_troopa)
+
+    fight_flight(decision, quitting)
   end
   return decision
 end
 decision = ""
-fight_flight(decision, quitting, box, koopa_troopa)
+fight_flight(decision, quitting)
 # array of choices to be presented to user based on their choice stored in the choice arrays
 def fight_choice
   options = {
@@ -403,7 +401,7 @@ def fight_choice
     puts "\n"
     `afplay bump.wav`
     puts "🚫Incorrect input!🚫"
-    print "Please choose #{options[box_.first][@koopa_choice.first]}"
+    puts "Please choose: #{options[box_.first][@koopa_choice.first]}"
     users_choice = gets.chomp.downcase
   end
 
@@ -506,4 +504,5 @@ def fight_choice
 end
 
 fight_choice
+
 ```
