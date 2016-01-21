@@ -302,9 +302,9 @@ def fight_flight(decision, quitting)
   puts "\t\t\t\t\t\t\tA) 👊 Fight him?"
   puts "\t\t\t\t\t\t\tB) 👶 Be a coward and quit?"
   puts "\n"
-
   print "\t\t\t\t\t\t\tChoose A or B:\t"
   decision = gets.chomp.downcase
+
 # loops until correct input
   until decision == "a" || decision == "b"
     puts "\n"
@@ -320,12 +320,13 @@ def fight_flight(decision, quitting)
     puts "\n"
     `afplay bestcoin.wav`
     `afplay letsgo.wav`
+
 # option to quit
   elsif decision == "b"
     system('clear')
     print "\t\t\t\t\t\t\tSo then would you like to quit? Yes/No:\t"
     quitting = gets.chomp.downcase
-
+    quit(quitting)
     fight_flight(decision, quitting)
   end
   return decision
