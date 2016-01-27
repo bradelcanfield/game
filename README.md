@@ -1,2 +1,1 @@
-# game
- week 1 project
+A repl game of Super Mario Bros.
